@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/navigationHome"
-        android:icon="@drawable/selector_home"
-        android:title="首页" />
+        android:id="@+id/navigationOne"
+        android:icon="@drawable/selector_one"
+        android:title="列表1" />
     <item
-        android:id="@+id/navigationFind"
+        android:id="@+id/navigationTwo"
         android:icon="@mipmap/strawberry"
-        android:title="" />
+        android:title="列表2" />
 
     <item
-        android:id="@+id/navigationMy"
-        android:icon="@drawable/selector_my"
-        android:title="我的" />
+        android:id="@+id/navigationThree"
+        android:icon="@drawable/selector_three"
+        android:title="列表3" />
+
+    <item
+        android:id="@+id/navigationFour"
+        android:icon="@drawable/selector_two"
+        android:title="列表4" />
+
+    <item
+        android:id="@+id/navigationFive"
+        android:icon="@drawable/selector_one"
+        android:title="列表5" />
+
 </menu>

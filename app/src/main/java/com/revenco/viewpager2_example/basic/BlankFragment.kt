@@ -22,11 +22,7 @@ class BlankFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val layoutTopView = view.findViewById<FrameLayout>(R.id.layoutTopView)
         layoutTopView.setBackgroundColor(generateBackGroundColor.invoke())
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        LogUtils.i("$this-->onDestroy")
+        LogUtils.i("onViewCreated->$this")
     }
 
     private val generateBackGroundColor = {
