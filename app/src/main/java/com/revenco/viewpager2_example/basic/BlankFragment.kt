@@ -1,4 +1,4 @@
-package com.revenco.viewpager2_example
+package com.revenco.viewpager2_example.basic
 
 import android.graphics.Color
 import android.os.Bundle
@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import androidx.annotation.ColorInt
 import com.blankj.utilcode.util.LogUtils
+import com.revenco.viewpager2_example.R
 import kotlin.random.Random
 
 class BlankFragment : Fragment() {

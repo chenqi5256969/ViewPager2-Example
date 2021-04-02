@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigationHome"
+        android:icon="@drawable/selector_home"
+        android:title="首页" />
+    <item
+        android:id="@+id/navigationFind"
+        android:icon="@mipmap/strawberry"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigationMy"
+        android:icon="@drawable/selector_my"
+        android:title="我的" />
+</menu>

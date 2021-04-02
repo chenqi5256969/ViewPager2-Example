@@ -1,3 +1,5 @@
+package com.revenco.viewpager2_example.basic
+
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
 
@@ -28,7 +30,7 @@ class ZoomOutPageTransformer : ViewPager2.PageTransformer {
                         horzMargin + vertMargin / 2
                     }
 
-                    // Scale the page down (between MIN_SCALE and 1)
+                    // Scale the page down (between com.revenco.viewpager2_example.basic.MIN_SCALE and 1)
                     scaleX = scaleFactor
                     scaleY = scaleFactor
 

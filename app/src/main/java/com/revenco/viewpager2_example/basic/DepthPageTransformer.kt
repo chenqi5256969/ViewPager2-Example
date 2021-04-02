@@ -1,3 +1,5 @@
+package com.revenco.viewpager2_example.basic
+
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
 
@@ -30,7 +32,7 @@ class DepthPageTransformer : ViewPager2.PageTransformer {
                     // Move it behind the left page
                     translationZ = -1f
 
-                    // Scale the page down (between MIN_SCALE and 1)
+                    // Scale the page down (between com.revenco.viewpager2_example.basic.MIN_SCALE and 1)
                     val scaleFactor = (MIN_SCALE + (1 - MIN_SCALE) * (1 - Math.abs(position)))
                     scaleX = scaleFactor
                     scaleY = scaleFactor
