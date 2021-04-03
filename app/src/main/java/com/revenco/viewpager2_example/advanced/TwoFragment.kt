@@ -31,6 +31,7 @@ class TwoFragment : Fragment() {
         layoutTopView.setBackgroundColor(generateBackGroundColor.invoke())
         blankViewModel = ViewModelProvider(this).get(BlankViewModel::class.java)
         LogUtils.i("onViewCreated->two")
+
     }
     override fun onDestroy() {
         super.onDestroy()
