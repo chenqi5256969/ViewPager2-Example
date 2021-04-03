@@ -1,21 +1,25 @@
-package com.revenco.viewpager2_example.basic
+package com.revenco.viewpager2_example.advanced
 
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import androidx.lifecycle.ViewModel
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStoreOwner
 import com.blankj.utilcode.util.LogUtils
 import com.revenco.viewpager2_example.R
 import com.revenco.viewpager2_example.vm.BlankViewModel
 import kotlin.random.Random
 
-class BlankFragment : Fragment() {
+/**
+ *  Copyright © 2021/4/4 Hugecore Information Technology (Guangzhou) Co.,Ltd. All rights reserved.
+ *  author: chenqi
+ */
+
+class FiveFragment : Fragment() {
+    lateinit var blankViewModel: BlankViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,6 +30,13 @@ class BlankFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val layoutTopView = view.findViewById<FrameLayout>(R.id.layoutTopView)
         layoutTopView.setBackgroundColor(generateBackGroundColor.invoke())
+        blankViewModel = ViewModelProvider(this).get(BlankViewModel::class.java)
+        LogUtils.i("onViewCreated->five")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        LogUtils.i("onDestroy->five")
     }
 
     private val generateBackGroundColor = {

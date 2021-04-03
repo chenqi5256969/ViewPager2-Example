@@ -24,11 +24,11 @@ class BottomNavigationActivity : AppCompatActivity() {
 
     private val fragmentCreator by lazy {
         mapOf(
-            INDEX_ONE to BlankFragment(),
-            INDEX_TWO to BlankFragment(),
-            INDEX_THREE to BlankFragment(),
-            INDEX_Four to BlankFragment(),
-            INDEX_FIVE to BlankFragment()
+            INDEX_ONE to OneFragment(),
+            INDEX_TWO to TwoFragment(),
+            INDEX_THREE to ThreeFragment(),
+            INDEX_Four to FourFragment(),
+            INDEX_FIVE to FiveFragment()
         )
     }
 
@@ -56,7 +56,7 @@ class BottomNavigationActivity : AppCompatActivity() {
     private fun settingViewPager2() {
         bnVp2.adapter = BottomAdapter((this))
         //禁止滑动
-        bnVp2.isUserInputEnabled=false
+        bnVp2.isUserInputEnabled = false
     }
 
     private fun withViewPagerAndBottom() {

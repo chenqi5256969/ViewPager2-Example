@@ -46,4 +46,5 @@ dependencies {
 
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation "com.blankj:utilcodex:1.30.6"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0"
 }
