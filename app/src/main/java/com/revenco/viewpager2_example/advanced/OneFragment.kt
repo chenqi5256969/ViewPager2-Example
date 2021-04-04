@@ -9,6 +9,7 @@ import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.blankj.utilcode.util.LogUtils
+import com.revenco.viewpager2_example.EventObserver
 import com.revenco.viewpager2_example.R
 import com.revenco.viewpager2_example.vm.BlankViewModel
 import kotlin.random.Random
@@ -17,7 +18,6 @@ import kotlin.random.Random
  *  Copyright © 2021/4/4 Hugecore Information Technology (Guangzhou) Co.,Ltd. All rights reserved.
  *  author: chenqi
  */
-
 class OneFragment : Fragment() {
     lateinit var blankViewModel: BlankViewModel
     override fun onCreateView(
@@ -31,7 +31,10 @@ class OneFragment : Fragment() {
         val layoutTopView = view.findViewById<FrameLayout>(R.id.layoutTopView)
         layoutTopView.setBackgroundColor(generateBackGroundColor.invoke())
         blankViewModel = ViewModelProvider(this).get(BlankViewModel::class.java)
-        LogUtils.i("onViewCreated->one")
+        LogUtils.i("one->$blankViewModel")
+        blankViewModel.isNumberCount.observe(this, EventObserver {
+            LogUtils.i("one->$it")
+        })
     }
 
     override fun onDestroy() {
