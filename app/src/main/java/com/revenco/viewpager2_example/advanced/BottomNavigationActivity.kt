@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.revenco.viewpager2_example.R
 import com.revenco.viewpager2_example.basic.BlankFragment
+import com.revenco.viewpager2_example.basic.DepthPageTransformer
 
 class BottomNavigationActivity : AppCompatActivity() {
     lateinit var bottomBar: BottomNavigationView
@@ -57,6 +61,15 @@ class BottomNavigationActivity : AppCompatActivity() {
         bnVp2.adapter = BottomAdapter((this))
         //禁止滑动
         bnVp2.isUserInputEnabled = false
+        //设置多个Transformer
+        val compositePageTransformer = CompositePageTransformer()
+        compositePageTransformer.addTransformer(MarginPageTransformer(resources.getDimension(R.dimen.dp_10).toInt()))
+        compositePageTransformer.addTransformer(DepthPageTransformer())
+        bnVp2.setPageTransformer(compositePageTransformer)
+
+        //一屏多页
+        val recyclerView = bnVp2.getChildAt(0) as RecyclerView
+        recyclerView.setPadding(20,0,20,0)
     }
 
     private fun withViewPagerAndBottom() {
