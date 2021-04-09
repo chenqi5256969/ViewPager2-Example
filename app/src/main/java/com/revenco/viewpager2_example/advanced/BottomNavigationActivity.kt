@@ -59,17 +59,25 @@ class BottomNavigationActivity : AppCompatActivity() {
 
     private fun settingViewPager2() {
         bnVp2.adapter = BottomAdapter((this))
+        //vp2竖直滑动
+        // bnVp2.orientation=ViewPager2.ORIENTATION_VERTICAL
         //禁止滑动
         bnVp2.isUserInputEnabled = false
         //设置多个Transformer
         val compositePageTransformer = CompositePageTransformer()
-        compositePageTransformer.addTransformer(MarginPageTransformer(resources.getDimension(R.dimen.dp_10).toInt()))
+        compositePageTransformer.addTransformer(
+            MarginPageTransformer(
+                resources.getDimension(R.dimen.dp_10).toInt()
+            )
+        )
         compositePageTransformer.addTransformer(DepthPageTransformer())
         bnVp2.setPageTransformer(compositePageTransformer)
 
         //一屏多页
         val recyclerView = bnVp2.getChildAt(0) as RecyclerView
-        recyclerView.setPadding(20,0,20,0)
+        recyclerView.setPadding(20, 0, 20, 0)
+
+
     }
 
     private fun withViewPagerAndBottom() {
