@@ -77,6 +77,8 @@ class BottomNavigationActivity : AppCompatActivity() {
         val recyclerView = bnVp2.getChildAt(0) as RecyclerView
         recyclerView.setPadding(20, 0, 20, 0)
 
+        //滑动监听,重写自己需要的方法即可
+        bnVp2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {})
 
     }
 
