@@ -80,6 +80,9 @@ class BottomNavigationActivity : AppCompatActivity() {
         //滑动监听,重写自己需要的方法即可
         bnVp2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {})
 
+        //预先加载个数
+        bnVp2.offscreenPageLimit=4
+
     }
 
     private fun withViewPagerAndBottom() {
